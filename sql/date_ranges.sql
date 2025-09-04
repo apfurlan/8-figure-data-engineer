@@ -17,7 +17,6 @@ BEGIN
     RETURN QUERY
     SELECT 
         date,
-		date,
         AVG(a.spend/a.conversions) as avg_CAC,
         AVG(a.conversions*100/a.spend) as avg_ROAS,
         SUM(a.spend/a.conversions) as sum_CAC,
