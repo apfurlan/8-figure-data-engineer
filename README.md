@@ -16,7 +16,8 @@ The goal is to evaluate the approach to data ingestion, modeling, and making met
 
 
 ## __3. Architecture & Technology Stack__
-3.1. Medallion Architecture
+
+### __3.1. Medallion Architecture__
 The data is processed through three distinct layers, each serving a specific purpose:
 
 - Bronze (Raw Layer): Stores the raw, unprocessed data as it was ingested from the source. The schema is applied, and basic data typing is enforced.

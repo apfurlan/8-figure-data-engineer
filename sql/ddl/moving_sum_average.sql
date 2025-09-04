@@ -1,0 +1,20 @@
+CREATE TABLE postgres.silver.moving_summary_metrics (
+    date DATE not NULL,
+    window_prev_date DATE,
+    avg_cac DECIMAL(18,4),
+    avg_cac_window_prev_date DECIMAL(18,4),
+    avg_cac_delta DECIMAL(18,4),
+    sum_cac DECIMAL(18,4),
+    sum_cac_window_prev_date DECIMAL(18,4),
+    sum_cac_delta DECIMAL(18,4),
+    perc_delta_avg_cac DECIMAL(10,2),
+    perc_delta_sum_cac DECIMAL(10,2),
+    avg_roas DECIMAL(18,4),
+    avg_roas_window_prev_date DECIMAL(18,4),
+    avg_roas_delta DECIMAL(18,4),
+    sum_roas DECIMAL(18,4),
+    sum_roas_window_prev_date DECIMAL(18,4),
+    sum_roas_delta DECIMAL(18,4),
+    perc_delta_avg_roas DECIMAL(10,2),
+    perc_delta_sum_roas DECIMAL(10,2)
+);
