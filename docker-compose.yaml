@@ -1,5 +1,6 @@
 services:
   
+  # ================= postgres ==================
   postgres:
     image: postgres
     container_name: postgres-db
@@ -15,6 +16,29 @@ services:
       - n8n-network
     restart: unless-stopped
 
+
+# ================= Metabase ==================
+  metabase:
+    image: metabase/metabase:v0.47.1
+    container_name: metabase
+    ports:
+      - "3000:3000"
+    # environment:
+    #   MB_DB_TYPE: postgres
+    #   MB_DB_DBNAME: postgres
+    #   MB_DB_PORT: 5431
+    #   MB_DB_USER: postgres
+    #   MB_DB_PASS: postgres
+    #   MB_DB_HOST: postgres
+    volumes:
+      - metabase_data:/metabase-data
+    depends_on:
+      - postgres
+    restart: unless-stopped
+    networks:
+      - n8n-network
+  
+# ================= n8n ==================
   n8n:
     image: n8nio/n8n
     container_name: n8n-app
@@ -26,6 +50,7 @@ services:
       - n8n_data:/home/node/.n8n
     depends_on:
       - postgres
+      - metabase
     restart: unless-stopped
     networks:
       - n8n-network 
@@ -33,7 +58,11 @@ services:
 volumes:
   postgres_data:
   n8n_data:
+  metabase_data:
+
 
 networks:
   n8n-network:
     driver: bridge
+
+  
