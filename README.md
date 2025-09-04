@@ -7,21 +7,23 @@ This project demonstrates a data engineering workflow built for an assessment. I
 ## __2. Objective__
 The goal is to evaluate the approach to data ingestion, modeling, and making metrics accessible. This is not intended to be a production-ready system but a clear demonstration of:
 
-Data Engineering Thinking: Architectural design and data modeling.
+- __Data Engineering Thinking__: Architectural design and data modeling.
 
-SQL Proficiency: Complex query writing for data transformation and aggregation.
+- __SQL Proficiency__: Complex query writing for data transformation and aggregation.
 
-Automation Skills: Using n8n to build a robust, scheduled data pipeline.
+- __Automation Skills__: Using n8n to build a robust, scheduled data pipeline.
+
+
 
 ## __3. Architecture & Technology Stack__
 3.1. Medallion Architecture
 The data is processed through three distinct layers, each serving a specific purpose:
 
-Bronze (Raw Layer): Stores the raw, unprocessed data as it was ingested from the source. The schema is applied, and basic data typing is enforced.
+- Bronze (Raw Layer): Stores the raw, unprocessed data as it was ingested from the source. The schema is applied, and basic data typing is enforced.
 
-Silver (Refined Layer): Contains cleaned, enriched, and transformed data. This layer often involves joining datasets and preparing data for business analysis.
+- Silver (Refined Layer): Contains cleaned, enriched, and transformed data. This layer often involves joining datasets and preparing data for business analysis.
 
-Gold (Aggregated Layer): Stores highly aggregated data, often in the form of business-level metrics, ready for consumption by dashboards and reports.
+- Gold (Aggregated Layer): Stores highly aggregated data, often in the form of business-level metrics, ready for consumption by dashboards and reports.
 
 ### __3.2. Tools & Technologies__
 Component	Technology	Purpose
